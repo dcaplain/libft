@@ -2,9 +2,9 @@
 
 char	*ft_strcat(char *dest, const char *src)
 {
-	while (dest)
+	while (*dest)
 		dest++;
-	while (src)
+	while (*src)
 		*(dest++) = *(src++);
 	dest = '\0';
 	return (dest);
