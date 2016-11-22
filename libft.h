@@ -19,4 +19,6 @@ char	*ft_strchr(const char *str, int c);
 
 char	*ft_strrchr(const char *str, int c);
 
+char	*ft_strstr(const char *haystack, const char *needle);
+
 #endif
