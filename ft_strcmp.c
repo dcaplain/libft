@@ -6,13 +6,18 @@
 /*   By: dcaplain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:26:18 by dcaplain          #+#    #+#             */
-/*   Updated: 2016/11/23 10:28:26 by dcaplain         ###   ########.fr       */
+/*   Updated: 2016/11/24 12:36:24 by dcaplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_strcmp(const char *s1, const char *s2)
 {
-	while (*(s1++) && *(s2++) && *s1 == *s2)
-		;
-	return (*s1 - *s2);
+	size_t	len;
+	
+	len = ft_strlen(s1);
+	if (ft_strlen(s2) > len)
+		len = ft_strlen(s2);
+	return (ft_memcmp(s1, s2, len));
 }

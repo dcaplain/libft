@@ -6,7 +6,7 @@
 /*   By: dcaplain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 10:10:43 by dcaplain          #+#    #+#             */
-/*   Updated: 2016/11/23 10:10:51 by dcaplain         ###   ########.fr       */
+/*   Updated: 2016/11/24 12:30:24 by dcaplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strstr(const char *haystack, const char *needle)
 
 	cur_h = (char *)haystack;
 	cur_n = (char *)needle;
+	if (ft_strlen(needle) == 0)
+		return (cur_h);
 	while (*haystack)
 	{
 		cur_h = (char *)haystack;

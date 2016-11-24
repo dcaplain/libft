@@ -6,14 +6,17 @@
 /*   By: dcaplain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 10:15:49 by dcaplain          #+#    #+#             */
-/*   Updated: 2016/11/23 11:20:45 by dcaplain         ###   ########.fr       */
+/*   Updated: 2016/11/24 10:52:56 by dcaplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcpy(char *dest, const char *src)
 {
+	char	*d;
+
+	d = dest;
 	while (*src)
 		*(dest++) = *(src++);
 	*dest = '\0';
-	return (dest);
+	return (d);
 }

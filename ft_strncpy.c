@@ -6,7 +6,7 @@
 /*   By: dcaplain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 10:11:18 by dcaplain          #+#    #+#             */
-/*   Updated: 2016/11/23 10:12:03 by dcaplain         ###   ########.fr       */
+/*   Updated: 2016/11/24 11:04:56 by dcaplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,20 @@
 
 char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
+	char	*d;
+
+	d = dest;
 	while (*src && n > 0)
 	{
-		*(dest++) = *(src++);
+		*dest = *src;
+		dest++;
+		src++;
 		n--;
 	}
-	return (dest);
+	while (n > 0)
+	{
+		*(dest++) = '\0';
+		n--;
+	}
+	return (d);
 }

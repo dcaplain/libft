@@ -6,7 +6,7 @@
 /*   By: dcaplain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 10:18:22 by dcaplain          #+#    #+#             */
-/*   Updated: 2016/11/23 11:18:43 by dcaplain         ###   ########.fr       */
+/*   Updated: 2016/11/24 12:21:22 by dcaplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 char	*ft_strcat(char *dest, const char *src)
 {
+	char	*d;
+
+		d = dest;
 	while (*dest)
 		dest++;
 	while (*src)
 		*(dest++) = *(src++);
 	*dest = '\0';
-	return (dest);
+	return (d);
 }
