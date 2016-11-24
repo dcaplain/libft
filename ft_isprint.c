@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcaplain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/10 15:26:18 by dcaplain          #+#    #+#             */
-/*   Updated: 2016/11/24 16:41:59 by dcaplain         ###   ########.fr       */
+/*   Created: 2016/11/24 16:22:47 by dcaplain          #+#    #+#             */
+/*   Updated: 2016/11/24 16:25:37 by dcaplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+int		ft_isprint(int c)
 {
-	size_t	len;
-
-	len = ft_strlen(s1);
-	if (ft_strlen(s2) > len)
-		len = ft_strlen(s2);
-	return (ft_memcmp(s1, s2, len));
+	if (c >= 32 && c <= 126)
+		return (1);
+	else
+		return (0);
 }
