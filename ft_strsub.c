@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcaplain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 15:30:09 by dcaplain          #+#    #+#             */
-/*   Updated: 2016/11/25 11:29:09 by dcaplain         ###   ########.fr       */
+/*   Created: 2016/11/25 11:30:40 by dcaplain          #+#    #+#             */
+/*   Updated: 2016/11/25 11:42:59 by dcaplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-int		ft_atoi(const char *nptr)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int		nb;
-	char	neg;
+	char	*sub;
 
-	nb = 0;
-	neg = '+';
-	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
-	if (*nptr == '-')
+	if ((sub = (char *)malloc(sizeof(*sub) * (len + 1))))
 	{
-		neg = '-';
-		nptr++;
+		while (start--)
+			s++;
+		ft_strncpy(sub, s, len);
+		sub[len] = '\0';
+		return (sub);
 	}
-	else if (*nptr == '+')
-		nptr++;
-	while (*nptr >= '0' && *nptr <= '9')
-	{
-		nb = nb * 10 + (*nptr - '0');
-		nptr++;
-	}
-	if (neg == '-')
-		nb = -nb;
-	return (nb);
+	return (NULL);
 }

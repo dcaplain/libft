@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcaplain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 15:30:09 by dcaplain          #+#    #+#             */
-/*   Updated: 2016/11/25 11:29:09 by dcaplain         ###   ########.fr       */
+/*   Created: 2016/11/25 11:45:04 by dcaplain          #+#    #+#             */
+/*   Updated: 2016/11/25 11:51:40 by dcaplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *nptr)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		nb;
-	char	neg;
+	char	*join;
 
-	nb = 0;
-	neg = '+';
-	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
-	if (*nptr == '-')
-	{
-		neg = '-';
-		nptr++;
-	}
-	else if (*nptr == '+')
-		nptr++;
-	while (*nptr >= '0' && *nptr <= '9')
-	{
-		nb = nb * 10 + (*nptr - '0');
-		nptr++;
-	}
-	if (neg == '-')
-		nb = -nb;
-	return (nb);
+	join = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
+	if (join == NULL)
+		return (NULL);
+	ft_strcpy(join, s1);
+	ft_strcat(join, s2);
+	return (join);
 }

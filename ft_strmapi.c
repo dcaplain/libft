@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcaplain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 15:30:09 by dcaplain          #+#    #+#             */
-/*   Updated: 2016/11/25 11:29:09 by dcaplain         ###   ########.fr       */
+/*   Created: 2016/11/25 11:12:24 by dcaplain          #+#    #+#             */
+/*   Updated: 2016/11/25 11:14:01 by dcaplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *nptr)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		nb;
-	char	neg;
+	char	*sf;
+	size_t	i;
 
-	nb = 0;
-	neg = '+';
-	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
-	if (*nptr == '-')
+	i = 0;
+	sf = ft_strdup(s);
+	if (sf == NULL)
+		return (NULL);
+	while (sf[i])
 	{
-		neg = '-';
-		nptr++;
+		sf[i] = f(i, sf[i]);
+		i++;
 	}
-	else if (*nptr == '+')
-		nptr++;
-	while (*nptr >= '0' && *nptr <= '9')
-	{
-		nb = nb * 10 + (*nptr - '0');
-		nptr++;
-	}
-	if (neg == '-')
-		nb = -nb;
-	return (nb);
+	return (sf);
 }
