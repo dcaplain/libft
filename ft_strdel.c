@@ -6,13 +6,17 @@
 /*   By: dcaplain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 08:54:54 by dcaplain          #+#    #+#             */
-/*   Updated: 2016/11/25 09:46:46 by dcaplain         ###   ########.fr       */
+/*   Updated: 2016/11/28 13:55:22 by dcaplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 void	ft_strdel(char **as)
 {
-	return (ft_memdel((void**)as));
+	if (as && *as)
+	{
+		free(*as);
+		*as = NULL;
+	}
 }

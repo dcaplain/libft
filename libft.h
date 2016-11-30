@@ -6,7 +6,7 @@
 /*   By: dcaplain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 11:36:01 by dcaplain          #+#    #+#             */
-/*   Updated: 2016/11/25 15:23:28 by dcaplain         ###   ########.fr       */
+/*   Updated: 2016/11/30 15:10:58 by dcaplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,6 @@ char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
 
 int		ft_strcmp(const char *s1, const char *s2);
-
-void	ft_putchar(char c);
-
-void	ft_putstr(char *str);
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
@@ -104,5 +100,23 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
 
 char	**ft_strsplit(char const *s, char c);
+
+char	*ft_itoa(int n);
+
+void	ft_putchar(char c);
+
+void	ft_putstr(char *str);
+
+void	ft_putendl(char const *s);
+
+void	ft_putnbr(int n);
+
+void	ft_putchar_fd(char c, int fd);
+
+void	ft_putstr_fd(char const *s, int fd);
+
+void	ft_putendl_fd(char const *s, int fd);
+
+void	ft_putnbr_fd(int n, int fd);
 
 #endif

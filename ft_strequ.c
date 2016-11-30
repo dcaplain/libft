@@ -6,7 +6,7 @@
 /*   By: dcaplain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 11:16:51 by dcaplain          #+#    #+#             */
-/*   Updated: 2016/11/25 11:29:18 by dcaplain         ###   ########.fr       */
+/*   Updated: 2016/11/28 14:36:10 by dcaplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
+	if (!s1 || !s2)
+		return (0);
 	if (ft_strcmp(s1, s2) == 0)
 		return (1);
 	else

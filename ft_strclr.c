@@ -6,7 +6,7 @@
 /*   By: dcaplain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 09:41:04 by dcaplain          #+#    #+#             */
-/*   Updated: 2016/11/25 09:44:51 by dcaplain         ###   ########.fr       */
+/*   Updated: 2016/11/28 13:55:45 by dcaplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_strclr(char *str)
 {
-	ft_memset(str, '\0', ft_strlen(str));
+	if (str)
+		ft_memset(str, '\0', ft_strlen(str));
 }
