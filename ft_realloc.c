@@ -6,7 +6,7 @@
 /*   By: dcaplain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/17 15:54:36 by dcaplain          #+#    #+#             */
-/*   Updated: 2016/12/17 16:33:51 by dcaplain         ###   ########.fr       */
+/*   Updated: 2016/12/20 09:45:25 by dcaplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_realloc(void *to_realloc, size_t size)
 	void	*realloc;
 
 	realloc = ft_memalloc(size);
+	if (!to_realloc)
+		return (realloc);
 	realloc = ft_strncpy(realloc, to_realloc, size);
 	free(to_realloc);
 	to_realloc = NULL;
