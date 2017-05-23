@@ -6,14 +6,28 @@
 /*   By: dcaplain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 11:36:01 by dcaplain          #+#    #+#             */
-/*   Updated: 2016/12/17 16:46:13 by dcaplain         ###   ########.fr       */
+/*   Updated: 2017/05/23 11:39:34 by dcaplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <unistd.h>
 # include <string.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include <sys/uio.h>
+# include <sys/types.h>
+
+# define BUFF_SIZE_GNL 10
+
+typedef struct		s_point
+{
+	int		x;
+	int		y;
+}					t_point;
+
 
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
@@ -68,5 +82,8 @@ void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	*ft_realloc(void *to_realloc, size_t size);
+int		get_next_line(int fd, char **line);
+int		ft_round_off(double a);
+void	draw_line(t_point A, t_point B, void *id, void *win_id);
 
 #endif

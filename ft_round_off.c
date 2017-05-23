@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_round_off.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcaplain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/17 15:54:36 by dcaplain          #+#    #+#             */
-/*   Updated: 2016/12/20 09:39:34 by dcaplain         ###   ########.fr       */
+/*   Created: 2017/05/23 11:07:57 by dcaplain          #+#    #+#             */
+/*   Updated: 2017/05/23 11:25:48 by dcaplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	*ft_realloc(void *to_realloc, size_t size)
+int		ft_round_off(double a)
 {
-	void	*realloc;
+	int		inf;
+	int		sup;
 
-	realloc = ft_memalloc(size);
-	if (!to_realloc)
-		return (realloc);
-	realloc = ft_strncpy(realloc, to_realloc, size);
-	free(to_realloc);
-	to_realloc = NULL;
-	return (realloc);
+	inf = (int)a;
+	if (a >= 0)
+		sup = inf + 1;
+	else if (a < 0)
+		sup = inf - 1;
+	if ((a - inf) >= (sup - a))
+		return (sup);
+	else
+		return (inf);
 }
